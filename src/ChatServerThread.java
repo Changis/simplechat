@@ -9,7 +9,7 @@ import java.io.*;
 // Varje socket har en inputstream och en outputstream, således har
 // ServerThreads en streamIn (saker som kommer från klienten)
 // och en streamOut (saker som ska till klienten.)
-public class ServerThread implements Runnable{
+public class ChatServerThread implements Runnable{
    private ChatServer       server    = null;
    private Socket           socket    = null;
    private int              ID        = -1;
@@ -43,7 +43,7 @@ public class ServerThread implements Runnable{
             // den ska plocka bort den här tråden, för den är ju rätt broken nu efter ioe.
             // rimligtvis genom att passa med ID på något sätt.
             // (ID = porten den här är ansluten på).
-            stop();
+            //stop();
          }
       }
    }
@@ -61,7 +61,7 @@ public class ServerThread implements Runnable{
          // den ska plocka bort den här tråden, för den är ju rätt broken nu efter ioe.
          // rimligtvis genom att passa med ID på något sätt.
          // (ID = porten den här är ansluten på). 	
-         stop();
+         //stop();
       }
    }   
 

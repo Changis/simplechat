@@ -19,7 +19,7 @@ public class ChatServer implements Runnable {
    public ChatServer(int port){
       // Försök binda upp serversocket.
       try {
-         server = new ServerSocket(port);  
+         server_socket = new ServerSocket(port);  
          start();
       } catch(IOException ioe) {  
          System.out.println("Kan inte binda till port: " + port + ": " + ioe.getMessage() + " .. den var hal."); 
@@ -30,7 +30,7 @@ public class ChatServer implements Runnable {
       while (thread != null) {
          try {
             System.out.println("Sitter och vill att det ska komma en klient ..."); 
-            addThread(server.accept());
+            addThread(server_socket.accept());
          }
          catch(IOException ioe) {
             System.out.println("Server accept-fel: " + ioe); stop(); 

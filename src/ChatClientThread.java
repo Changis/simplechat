@@ -17,7 +17,12 @@ public class ChatClientThread extends Thread {
 
       // Öppna upp och starta.
       open();  
-      client.start();
+      try {
+		client.start();
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
    }
 
    // streamIn är alltså bunden till den socketen som vi har
